@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace efconsole.Migrations
 {
-    public partial class InitialCreat : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,12 +11,12 @@ namespace efconsole.Migrations
                 name: "Teachers",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Firstname = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
-                    Lastname = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
-                    Birthdate = table.Column<DateTimeOffset>(type: "TEXT", nullable: false),
-                    Email = table.Column<string>(type: "TEXT", nullable: true),
-                    Phone = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Firstname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Lastname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Birthdate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -27,14 +27,14 @@ namespace efconsole.Migrations
                 name: "Students",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Firstname = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
-                    Lastname = table.Column<string>(type: "TEXT", maxLength: 50, nullable: true),
-                    Birthdate = table.Column<DateTimeOffset>(type: "TEXT", nullable: false),
-                    Email = table.Column<string>(type: "TEXT", nullable: true),
-                    Phone = table.Column<string>(type: "TEXT", nullable: true),
-                    MentorId = table.Column<Guid>(type: "TEXT", nullable: false),
-                    TeacherId = table.Column<Guid>(type: "TEXT", nullable: true)
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Firstname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Lastname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Birthdate = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Phone = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MentorId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    TeacherId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
                 constraints: table =>
                 {
